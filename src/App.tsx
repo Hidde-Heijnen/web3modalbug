@@ -24,6 +24,7 @@ const Balances = () => {
   const { data, isLoading, error } = useBalance({
     addressOrName: "0xed45ff9490723c2fb4a354e4b554c357604ea73c",
     formatUnits: "ether",
+    watch: false,
   });
 
   const {
@@ -34,8 +35,10 @@ const Balances = () => {
     addressOrName: "0xed45ff9490723c2fb4a354e4b554c357604ea73c",
     formatUnits: "ether",
     token: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    watch: false,
   });
 
+  //you can delete this useEffect, but it doesn't resolve the issue
   useEffect(() => {
     if (!isLoading) {
       setEthBal(parseFloat(data?.formatted!).toFixed(2));
