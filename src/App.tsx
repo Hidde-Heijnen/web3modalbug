@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { ConnectButton, useAccount, useBalance } from "@web3modal/react";
 
@@ -38,7 +37,9 @@ const Balances = () => {
     watch: false,
   });
 
-  //you can delete this useEffect, but it doesn't resolve the issue
+  // console.log("data", data);
+
+  //you can comment this useEffect and try the console log above, but it doesn't resolve the issue
   useEffect(() => {
     if (!isLoading) {
       setEthBal(parseFloat(data?.formatted!).toFixed(2));
